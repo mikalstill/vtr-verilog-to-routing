@@ -223,11 +223,11 @@ int odin_ii(int argc,char **argv)
 	}
 	else
 	{
-        try {
-            read_blif(global_args.blif_file);
-        } catch(vtr::VtrError& vtr_error) {
-            printf("Failed to load blif file: %s\n", vtr_error.what());
-        }
+		try {
+			read_blif(global_args.blif_file);
+		} catch(vtr::VtrError& vtr_error) {
+			printf("Failed to load blif file: %s\n", vtr_error.what());
+		}
 	}
 
 
@@ -330,7 +330,7 @@ void get_options(int argc, char** argv) {
             .default_value("false")
             .action(argparse::Action::STORE_TRUE);
 
-    other_grp.add_argument(global_args.black_box_latches, "-black_box_latches")
+    other_grp.add_argument(global_args.black_box_latches, "--black_box_latches")
             .help("Output all Latches as Black Boxes")
             .default_value("false")
             .action(argparse::Action::STORE_TRUE);
